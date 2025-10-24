@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "avl-api-collection",
+    "name": "AVL API",
+    "description": "Collection for AVL Tree API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Child (AVL)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1001,\n    \"name\": \"John Doe\",\n    \"age\": 10,\n    \"gender\": \"M\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8001/children/avl/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", "avl", ""]
+        },
+        "description": "Create a new child record in the AVL tree"
+      }
+    },
+    {
+      "name": "Get Child by ID (AVL)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/children/avl/1001",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", "avl", "1001"]
+        },
+        "description": "Retrieve a child's information by ID"
+      }
+    },
+    {
+      "name": "List All Children (AVL)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/children/?order=in",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", ""],
+          "query": [
+            {
+              "key": "order",
+              "value": "in"
+            }
+          ]
+        },
+        "description": "List all children using in-order traversal (default)"
+      }
+    },
+    {
+      "name": "Update Child",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"nombre\": \"Juan Carlos Pérez\",\n    \"edad\": 11\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/children/12345678",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", "12345678"]
+        },
+        "description": "Update a child's information"
+      }
+    },
+    {
+      "name": "Delete Child",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/children/12345678",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", "12345678"]
+        },
+        "description": "Delete a child record from the BST"
+      }
+    }
+  ]
+}

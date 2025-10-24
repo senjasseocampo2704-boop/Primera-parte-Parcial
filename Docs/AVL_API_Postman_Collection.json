@@ -1,0 +1,139 @@
+{
+  "info": {
+    "_postman_id": "avl-api-collection",
+    "name": "AVL API",
+    "description": "Collection for AVL Tree API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Child (AVL)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"documento\": 12345678,\n    \"nombre\": "Ana Gómez",\n    \"edad\": 9,\n    \"acudiente\": "Carlos Gómez",\n    \"notas\": "Estudiante destacada"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8001/children/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", ""]
+        },
+        "description": "Create a new child record in the AVL tree"
+      }
+    },
+    {
+      "name": "Get Child by ID (AVL)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/children/12345678",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", "12345678"]
+        },
+        "description": "Retrieve a child's information by document number from AVL tree"
+      }
+    },
+    {
+      "name": "List All Children (AVL)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/children/?order=in",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", ""],
+          "query": [
+            {
+              "key": "order",
+              "value": "in"
+            }
+          ]
+        },
+        "description": "List all children using in-order traversal in AVL tree"
+      }
+    },
+    {
+      "name": "Update Child (AVL)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"nombre\": \"Ana María Gómez\",\n    \"edad\": 10\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8001/children/12345678",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", "12345678"]
+        },
+        "description": "Update a child's information in the AVL tree"
+      }
+    },
+    {
+      "name": "Delete Child (AVL)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/children/12345678",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", "12345678"]
+        },
+        "description": "Delete a child record from the AVL tree"
+      }
+    },
+    {
+      "name": "Get Tree Height (AVL)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/children/height",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", "height"]
+        },
+        "description": "Get the height of the AVL tree"
+      }
+    },
+    {
+      "name": "Get Tree Balance (AVL)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8001/children/balance",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8001",
+          "path": ["children", "balance"]
+        },
+        "description": "Check if the AVL tree is balanced"
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "info": {
+    "_postman_id": "abb-api-collection",
+    "name": "ABB API",
+    "description": "Collection for Binary Search Tree (ABB) API endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Child (ABB)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 1001,\n    \"name\": \"John Doe\",\n    \"age\": 10,\n    \"gender\": \"M\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/children/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", ""]
+        },
+        "description": "Create a new child record in the Binary Search Tree"
+      }
+    },
+    {
+      "name": "Get Child by ID (ABB)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/children/1001",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", "1001"]
+        },
+        "description": "Retrieve a child's information by ID"
+      }
+    },
+    {
+      "name": "List All Children (ABB)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/children/?order=in",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", ""],
+          "query": [
+            {
+              "key": "order",
+              "value": "in"
+            }
+          ]
+        },
+        "description": "List all children using in-order traversal (default)"
+      }
+    },
+    {
+      "name": "Update Child (ABB)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"John Updated\",\n    \"age\": 11,\n    \"gender\": \"M\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/children/1001",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", "1001"]
+        },
+        "description": "Update an existing child's information"
+      }
+    },
+    {
+      "name": "Delete Child (ABB)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/children/1001",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", "1001"]
+        },
+        "description": "Delete a child record from the BST"
+      }
+    },
+    {
+      "name": "Get Tree Stats (ABB)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/children/stats/tree",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["children", "stats", "tree"]
+        },
+        "description": "Get statistics about the BST (height, node count, etc.)"
+      }
+    }
+  ]
+}
