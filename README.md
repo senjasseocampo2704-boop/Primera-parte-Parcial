@@ -72,6 +72,7 @@ Crea un nuevo registro de niño en el árbol.
   "nombre": "Juan Pérez",
   "edad": 10,
 
+
 }
 ```
 
