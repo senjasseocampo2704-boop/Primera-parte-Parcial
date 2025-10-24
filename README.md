@@ -71,8 +71,7 @@ Crea un nuevo registro de niño en el árbol.
   "documento": 1234567890,
   "nombre": "Juan Pérez",
   "edad": 10,
-  "acudiente": "María Pérez",
-  "notas": "Alumno destacado en matemáticas"
+
 }
 ```
 
@@ -82,8 +81,6 @@ Crea un nuevo registro de niño en el árbol.
   "documento": 1234567890,
   "nombre": "Juan Pérez",
   "edad": 10,
-  "acudiente": "María Pérez",
-  "notas": "Alumno destacado en matemáticas"
 }
 ```
 
@@ -98,8 +95,6 @@ Busca y retorna un niño específico.
   "documento": 1234567890,
   "nombre": "Juan Pérez",
   "edad": 10,
-  "acudiente": "María Pérez",
-  "notas": "Alumno destacado en matemáticas"
 }
 ```
 
@@ -136,15 +131,11 @@ GET /children?order=post
     "documento": 1234567890,
     "nombre": "Juan Pérez",
     "edad": 10,
-    "acudiente": "María Pérez",
-    "notas": "Alumno destacado"
   },
   {
     "documento": 9876543210,
     "nombre": "Ana Gómez",
     "edad": 12,
-    "acudiente": "Carlos Gómez",
-    "notas": "Excelente en deportes"
   }
 ]
 ```
@@ -159,8 +150,6 @@ Actualiza los datos de un niño existente. El campo `documento` no puede ser mod
 {
   "nombre": "Juan Pérez Actualizado",
   "edad": 11,
-  "acudiente": "María Pérez",
-  "notas": "Promovido al siguiente grado"
 }
 ```
 
@@ -170,8 +159,6 @@ Actualiza los datos de un niño existente. El campo `documento` no puede ser mod
   "documento": 1234567890,
   "nombre": "Juan Pérez Actualizado",
   "edad": 11,
-  "acudiente": "María Pérez",
-  "notas": "Promovido al siguiente grado"
 }
 ```
 
@@ -262,8 +249,6 @@ curl -X POST "http://127.0.0.1:8000/children" \
     "documento": 1234567890,
     "nombre": "Juan Pérez",
     "edad": 10,
-    "acudiente": "María Pérez",
-    "notas": "Alumno destacado"
   }'
 ```
 
@@ -311,8 +296,6 @@ curl -X DELETE "http://127.0.0.1:8000/children/1234567890"
 - **documento**: Debe ser un entero positivo y único
 - **nombre**: Cadena de 1-100 caracteres (requerido)
 - **edad**: Entero entre 0 y 18 (requerido)
-- **acudiente**: Cadena de máximo 100 caracteres (opcional)
-- **notas**: Cadena de máximo 500 caracteres (opcional)
 
 ---
 
